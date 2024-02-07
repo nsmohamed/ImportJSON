@@ -451,10 +451,13 @@ function importLeads() {
   var configValues = configRange.getValues();
 
   configValues.forEach(function(row) {
+    
+
     var formId = row[0];
     var sheetName = row[1];
+
     if (formId && sheetName) {
-      var url = 'https://graph.facebook.com/v19.0/' + formId + '/leads?date_preset=lifetime&limit=1000&access_token=EAAPRoaMjYKsBO3rnA431TE2JgVuASYtQ5tmttCf1OmKpj1tE78DOPfzEsXlBmcsIkuEPTedTd3flQEoiZCJCHMW7ncjZAMg0JAZBgbQx5snkM8WZA7x2uselJdq2fszwZCZCzFO2gEZCjlmCoSEEzU4YoTsQUnGinVmyc6zLXeK5ZBEW4EDA1r7lWs74';
+      var url = 'https://graph.facebook.com/v19.0/' + formId + '/leads?date_preset=lifetime&limit=1000&access_token=your_access_token';
       var data = ImportJSON(url, null, null);
 
       var sheet = ss.getSheetByName(sheetName) || ss.insertSheet(sheetName);
